@@ -25,6 +25,8 @@ void main() {
     } catch (InputMismatchException e) {
         System.out.println("inserisci un valore valido");
     }
-    //prova git
     System.out.println("nuova funzione");
+    for(int i=0; i == 0;){
+        System.out.println("nuova funzione");
+    }
 }
