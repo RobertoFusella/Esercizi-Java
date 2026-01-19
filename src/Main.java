@@ -22,5 +22,5 @@ void main() {
     } catch (InputMismatchException e) {
         System.out.println("inserisci un valore valido");
     }
-
+    System.out.println("nuova funzione");
 }
