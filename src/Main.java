@@ -19,6 +19,9 @@ void main() {
             System.out.println(valore2 + " è maggiore di " + valore1);
         else if (valore1 == valore2)
             System.out.println("i numeri sono uguali");
+        //un errore che ho incontrato su questo esercizio era l'input
+        //se inserivo qualcosa di diverso da un intero (es. un char)
+        //mi dava come errore: InputMismatchException
     } catch (InputMismatchException e) {
         System.out.println("inserisci un valore valido");
     }
