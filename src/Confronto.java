@@ -1,8 +1,5 @@
-import java.util.Scanner;
-
 public class Confronto {
-   private int primoValore;
-   private int secondoValore;
+
 
    public void controllo(int primoValore,int secondoValore){
         if(primoValore > secondoValore)
