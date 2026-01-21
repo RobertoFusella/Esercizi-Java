@@ -18,8 +18,16 @@ public class Esercizio1 {
         int valore2;
         boolean inputNonValido=false;
         /*
-         TODO riscrivi in modo che se venisse inserito un carattere non numerico,
-         viene richiesto il valore invece che terminare con un errore
+         riscrivi in modo che se venisse inserito un carattere non numerico,
+         viene richiesto il valore invece che terminare con un errore -> FATTO
+
+         TODO
+         con il codice attuale anche se sbagli il secondo numero, devi rimettere anche il primo,
+         riesci a fare in modo che non succede?
+
+         TODO
+         il while è tecnicamente corretto, ma non formalmente, c'è un'istruzione che è fatta apposta
+         per eseguire un blocco di codice almeno una volta, prova a usare quella
          */
         while (!inputNonValido)
             try {
