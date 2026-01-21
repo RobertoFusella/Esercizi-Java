@@ -1,0 +1,21 @@
+package settimana1;
+
+public class Confronto {
+
+    /*
+     suggerimenti:
+
+     - è buona norma mettere sempre le parentesi agli if (o for, while, etc) anche se c'è una sola istruzione
+     - ricordati di formattare il codice
+     */
+
+    public void controllo(int primoValore, int secondoValore) {
+        if (primoValore > secondoValore)
+            System.out.println(primoValore + " è maggiore di " + secondoValore);
+        else if (secondoValore > primoValore)
+            System.out.println(secondoValore + " è maggiore di " + primoValore);
+        // TODO riscrivere eliminando i controlli non necessari
+        else if (primoValore == secondoValore || secondoValore == primoValore)
+            System.out.println("i numeri sono uguali");
+    }
+}
