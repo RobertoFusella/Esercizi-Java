@@ -15,8 +15,6 @@ public class Esercizio1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int [] valori= new int[2];
-        int valore1;
-        int valore2;
         boolean inputNonValido = false;
         /*
          riscrivi in modo che se venisse inserito un carattere non numerico,
@@ -48,7 +46,7 @@ public class Esercizio1 {
             Confronto confronto = new Confronto();
             confronto.controllo(valori[0], valori[1]);
 
-            inputNonValido = true;
+            //inputNonValido = true;
 
         } while (!inputNonValido);
 
