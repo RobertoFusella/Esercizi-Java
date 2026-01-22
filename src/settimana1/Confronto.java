@@ -11,7 +11,7 @@ public class Confronto {
         if (primoValore > secondoValore) {
             System.out.println(primoValore + " è maggiore di " + secondoValore);
         }
-        else if (secondoValore > primoValore) {
+        else if (primoValore < secondoValore) {
             System.out.println(secondoValore + " è maggiore di " + primoValore);
         }
         else if (primoValore == secondoValore){

@@ -14,9 +14,10 @@ public class Esercizio1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int [] valori= new int[2];
         int valore1;
         int valore2;
-        boolean inputNonValido=false;
+        boolean inputNonValido = false;
         /*
          riscrivi in modo che se venisse inserito un carattere non numerico,
          viene richiesto il valore invece che terminare con un errore -> FATTO
@@ -29,27 +30,34 @@ public class Esercizio1 {
          il while è tecnicamente corretto, ma non formalmente, c'è un'istruzione che è fatta apposta
          per eseguire un blocco di codice almeno una volta, prova a usare quella
          */
-        while (!inputNonValido)
-            try {
-                System.out.println("inserisci primo valore");
-                valore1 = scanner.nextInt();
-                System.out.println("inserisci secondo valore");
-                valore2 = scanner.nextInt();
-
-                Confronto confronto = new Confronto();
-                confronto.controllo(valore1, valore2);
-                inputNonValido=true;
-
-            } catch (InputMismatchException e) {
-                System.out.println("errore riprova");
-                scanner.nextLine();
+        do {
+            System.out.println("Inserisci primo valore");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Errore, riprova:");
+                scanner.next();
             }
-        }
-                //un errore che ho incontrato su questo esercizio era l'input
-                //se inserivo qualcosa di diverso da un intero (es. un char)
-                //mi dava come errore: InputMismatchException
+            valori[0] = scanner.nextInt();
 
-                //un altro errore che ho incontrato è stato che se non pulivo
-                //lo scanner con .nextLine() l'input sbagliato rimaneva nel buffer
-                //e partiva un loop infinito
+            System.out.println("Inserisci secondo valore");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Errore, riprova:");
+                scanner.next();
+            }
+            valori[1] = scanner.nextInt();
+
+            Confronto confronto = new Confronto();
+            confronto.controllo(valori[0], valori[1]);
+
+            inputNonValido = true;
+
+        } while (!inputNonValido);
+
+        //un errore che ho incontrato su questo esercizio era l'input
+        //se inserivo qualcosa di diverso da un intero (es. un char)
+        //mi dava come errore: InputMismatchException
+
+        //un altro errore che ho incontrato è stato che se non pulivo
+        //lo scanner con .nextLine() l'input sbagliato rimaneva nel buffer
+        //e partiva un loop infinito
     }
+}
