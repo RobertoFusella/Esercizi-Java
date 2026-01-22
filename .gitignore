@@ -6,7 +6,7 @@ out/
 .idea/
 *.iml
 target/
-
+ControlloValori.iml
 
 ### Eclipse ###
 .apt_generated
