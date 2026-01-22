@@ -46,7 +46,7 @@ public class Esercizio1 {
             Confronto confronto = new Confronto();
             confronto.controllo(valori[0], valori[1]);
 
-            //inputNonValido = true;
+            inputNonValido = true;
 
         } while (!inputNonValido);
 
