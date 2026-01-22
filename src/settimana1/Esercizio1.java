@@ -1,6 +1,5 @@
 package settimana1;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -20,12 +19,12 @@ public class Esercizio1 {
         /*
          riscrivi in modo che se venisse inserito un carattere non numerico,
          viene richiesto il valore invece che terminare con un errore -> FATTO
-         TODO
+
          con il codice attuale anche se sbagli il secondo numero, devi rimettere anche il primo,
-         riesci a fare in modo che non succede?
-         TODO
+         riesci a fare in modo che non succede? --> FATTO
+
          il while è tecnicamente corretto, ma non formalmente, c'è un'istruzione che è fatta apposta
-         per eseguire un blocco di codice almeno una volta, prova a usare quella
+         per eseguire un blocco di codice almeno una volta, prova a usare quella --> FATTO
          */
         do {
                 System.out.println("Inserisci primo valore");

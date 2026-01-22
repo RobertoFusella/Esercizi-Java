@@ -1,5 +1,4 @@
 package settimana2;
-import settimana1.Confronto;
 import java.util.Scanner;
 public class Esercizio2 {
     /*
@@ -14,27 +13,11 @@ public class Esercizio2 {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int primoValore;
-        int secondoValore;
-        boolean inputNonValido = false;
-        Confronto confronto = new Confronto();
+        Confronto2 confronto = new Confronto2();
 
-        do {
-            System.out.println("Inserisci primo valore");
-            if (!scanner.hasNextInt()) {
-                System.out.println("Errore, riprova:");
-                scanner.next();
-            }
-            primoValore = scanner.nextInt();
-            System.out.println("Inserisci secondo valore");
-            if (!scanner.hasNextInt()) {
-                System.out.println("Errore, riprova:");
-                scanner.next();
-            }
-            secondoValore = scanner.nextInt();
-            inputNonValido = true;
-        } while (!inputNonValido);
+        int primoValore = confronto.leggiEValida(scanner);
 
+        int secondoValore = confronto.leggiEValida(scanner);
 
         confronto.controllo(primoValore, secondoValore);
     }

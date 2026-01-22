@@ -2,7 +2,7 @@ package settimana2;
 
 import java.util.Scanner;
 
-public class Confronto {
+public class Confronto2 {
     public void controllo(int primoValore, int secondoValore) {
 
             if (primoValore > secondoValore) {
@@ -14,15 +14,6 @@ public class Confronto {
             else if (primoValore == secondoValore){
                 System.out.println("i numeri sono uguali");
             }
-    }
-    private boolean numeroValidato (int valore){
-        if(valore >= 1 && valore <= 100){
-        return true;
-        }
-        else {
-            System.out.println("numero non valido deve essere compreso tra 1 e 100");
-            return false;
-        }
     }
     public int leggiEValida(Scanner scanner) {
         while (true) { // ciclo infinito usciamo solo col return
@@ -36,6 +27,15 @@ public class Confronto {
             if (numeroValidato(valore)) {
                 return valore;
             }
+        }
+    }
+    private boolean numeroValidato (int valore){
+        if(valore >= 1 && valore <= 100){
+        return true;
+        }
+        else {
+            System.out.println("numero non valido deve essere compreso tra 1 e 100");
+            return false;
         }
     }
 }
