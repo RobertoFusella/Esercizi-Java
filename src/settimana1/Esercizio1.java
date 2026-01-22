@@ -14,42 +14,37 @@ public class Esercizio1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int [] valori= new int[2];
+        int primoValore;
+        int secondoValore;
         boolean inputNonValido = false;
         /*
          riscrivi in modo che se venisse inserito un carattere non numerico,
          viene richiesto il valore invece che terminare con un errore -> FATTO
-
          TODO
          con il codice attuale anche se sbagli il secondo numero, devi rimettere anche il primo,
          riesci a fare in modo che non succede?
-
          TODO
          il while è tecnicamente corretto, ma non formalmente, c'è un'istruzione che è fatta apposta
          per eseguire un blocco di codice almeno una volta, prova a usare quella
          */
         do {
-            System.out.println("Inserisci primo valore");
-            if (!scanner.hasNextInt()) {
-                System.out.println("Errore, riprova:");
-                scanner.next();
-            }
-            valori[0] = scanner.nextInt();
-
-            System.out.println("Inserisci secondo valore");
-            if (!scanner.hasNextInt()) {
-                System.out.println("Errore, riprova:");
-                scanner.next();
-            }
-            valori[1] = scanner.nextInt();
-
-            Confronto confronto = new Confronto();
-            confronto.controllo(valori[0], valori[1]);
-
-            inputNonValido = true;
-
+                System.out.println("Inserisci primo valore");
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Errore, riprova:");
+                    scanner.next();
+                }
+                primoValore = scanner.nextInt();
+                System.out.println("Inserisci secondo valore");
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Errore, riprova:");
+                    scanner.next();
+                }
+                secondoValore = scanner.nextInt();
+                inputNonValido = true;
         } while (!inputNonValido);
 
+        Confronto confronto = new Confronto();
+        confronto.controllo(primoValore, secondoValore);
         //un errore che ho incontrato su questo esercizio era l'input
         //se inserivo qualcosa di diverso da un intero (es. un char)
         //mi dava come errore: InputMismatchException
