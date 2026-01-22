@@ -30,14 +30,14 @@ public class Esercizio1 {
          */
         do {
             System.out.println("Inserisci primo valore");
-            while (!scanner.hasNextInt()) {
+            if (!scanner.hasNextInt()) {
                 System.out.println("Errore, riprova:");
                 scanner.next();
             }
             valori[0] = scanner.nextInt();
 
             System.out.println("Inserisci secondo valore");
-            while (!scanner.hasNextInt()) {
+            if (!scanner.hasNextInt()) {
                 System.out.println("Errore, riprova:");
                 scanner.next();
             }
