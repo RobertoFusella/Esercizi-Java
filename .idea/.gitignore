@@ -11,3 +11,6 @@
 .idea/
 out/
 *.iml
+bin/
+.DS_Store
+Thumbs.db
