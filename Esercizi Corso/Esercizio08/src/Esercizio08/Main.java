@@ -1,23 +1,13 @@
-package Esercizio07;
+package Esercizio08;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //esercizio con array lineari
-        double[] valoreSinistro = {70, 40, 300, 33};
-        double[] valoreDestro = {45, 120, 42, 6};
-        char[] codiceOperazione = {'d', 'a', 's', 'm'};
-        double[] risultato = new double[codiceOperazione.length];
         //controlliamo se la lunghezza di args è uguale a 0
         //se uguale a 0 eseguiamo le operazioni con l'array codiceOperaiozne
         if (args.length == 0) {
-            for (int i = 0; i < codiceOperazione.length; i++) {
-                risultato[i] = eseguiCalcoli(codiceOperazione[i], valoreSinistro[i], valoreDestro[i]);
-            }
-            for (double risultatoCorrente : risultato) {
-                System.out.println(risultatoCorrente);
-            }
+            eseguiCalcoli();
             //se la lunghezza di args è uguale a 1 e nelle impostazioni di esecuzione inseriamo "interrativo"
             // chiamiamo il metodo eseguiInterrativo
         } else if (args.length == 1 && args[0].equals("interrativo")) {
@@ -29,6 +19,33 @@ public class Main {
             System.out.println("per favore inserire una operazione e 2 numeri");
         }
     }
+
+    static void eseguiCalcoli() {
+        //istanziamo un array di tipo OperazioniMatematiche (dimensione 4)
+        OperazioniMatematiche[] equazioni = new OperazioniMatematiche[4];
+        //per ogni istanza chiamiamo il metodo riempiOggetto
+        equazioni[0] = riempiOggetto(70, 45, 'd');
+        equazioni[1] = riempiOggetto(40, 120, 'a');
+        equazioni[2] = riempiOggetto(300, 42, 's');
+        equazioni[3] = riempiOggetto(33, 6, 'm');
+        //ciclo for each cicla per ogni istanza di equazioni (in questo caso 4) e legge i valori
+        //e chiama per ogni istanza il metodo eseguiOperazioni presente dentro la classe OperazioniMatematiche
+        for (OperazioniMatematiche equazione : equazioni) {
+            equazione.eseguiOperazioni();
+            System.out.println("risultato = " + equazione.getRisultato());
+        }
+    }
+
+    //metodo per inizializzare un oggetto di OperazioniMatematiche usando i metodi get e set
+    //prendendo i parametri di input del metodo e passandoli agli attributi
+    private static OperazioniMatematiche riempiOggetto(double valoreSinistro, double valoreDestro, char codiceOperazione) {
+        OperazioniMatematiche equazione = new OperazioniMatematiche();
+        equazione.setValoreSinistro(valoreSinistro);
+        equazione.setValoreDestro(valoreDestro);
+        equazione.setCodiceOperazione(codiceOperazione);
+        return equazione;
+    }
+
     //prende in input una stringa e la divide in 3 parti usando .split(qui mettiamo uno spazio)
     //e chiama il metodo eseguiOperazioni su queste 3 parti
     static void eseguiInterrativo() {
@@ -38,19 +55,21 @@ public class Main {
         String[] parti = inputUtente.split(" ");
         eseguiOperazioni(parti);
     }
+
     //metodo per assegnare a ogni parte di stringa il suo valore
     //es. all'indice 0 chiamiamo il metodo codiceOperazioneToString
     // e alle altre 2 parti(indice 1 e 2) il metodo valoreDaParola
-    private static void eseguiOperazioni(String[] parte) {
-        char codiceOperazione = codiceOperazioneToString(parte[0]);
-        double valoreSinistro = valoreDaParola(parte[1]);
-        double valoreDestro = valoreDaParola(parte[2]);
-        double risultato = eseguiCalcoli(codiceOperazione, valoreSinistro, valoreDestro);
-        mostraRisultato(codiceOperazione, valoreSinistro, valoreDestro, risultato);
+    private static void eseguiOperazioni(String[] parti) {
+        char codiceOperazione = codiceOperazioneToString(parti[0]);
+        double valoreSinistro = valoreDaParola(parti[1]);
+        double valoreDes = valoreDaParola(parti[2]);
+        double risultato = eseguiCalcoli(codiceOperazione, valoreSinistro, valoreDes);
+        mostraRisultato(codiceOperazione, valoreSinistro, valoreDes, risultato);
     }
 
     //metodo per mostrare il risultato usando lo StringBuilder
     //si crea una variabile SringBuilder e con .append aggiungiamo le Stringe al buffer
+    //infine "montiamo" la stringa con toString
     private static void mostraRisultato(char codiceOperazione, double valoreSinistro, double valoreDestro, double risultato) {
         char simbolo = simboloDaCodiceOperazione(codiceOperazione);
         StringBuilder builder = new StringBuilder(20);
@@ -71,16 +90,16 @@ public class Main {
         char[] codiciOperazione = {'a', 's', 'm', 'd'};
         char[] simboli = {'+', '-', '*', '/'};
         char simbolo = ' ';
-        for (int i = 0; i < codiciOperazione.length; i++) {
-            if (codiceOperazione == codiciOperazione[i]) {
-                simbolo = simboli[i];
+        for (int index = 0; index < codiciOperazione.length; index++) {
+            if (codiceOperazione == codiciOperazione[index]) {
+                simbolo = simboli[index];
                 break;
             }
         }
-
         return simbolo;
     }
-    //Prendiamo la prima lettera fornita(dagli argometi forniti nel menu di esecuzione) come codice operazione usando .charAt()
+
+    //Prendiamo la prima lettera fornita come codice operazione usando .charAt()
     //es. Moltiplicazione andremo a prendere solo la M
     //ed eseguiamo il parse in double in quanto stiamo passando i numeri come Stringa
     private static void gestisciComandi(String[] args) {
@@ -90,7 +109,7 @@ public class Main {
         double risultato = eseguiCalcoli(codiceOperazione, valoreSinistro, valoreDestro);
         System.out.println(risultato);
     }
-
+    //metodo presente anche dentro la classe ma questo lo passiamo al metodo gestisciComandi
     static double eseguiCalcoli(char codiceOperazione, double valoreSinistro, double valoreDestro) {
         double risultato;
         switch (codiceOperazione) {
@@ -113,11 +132,11 @@ public class Main {
         }
         return risultato;
     }
+
     //prende la prima lettera di una stringa e la usa come codiceOperazione
-    // es. multiplicazione prende solo la M
+    // es. multiplicazione prende solo la M usando .charAt()
     static char codiceOperazioneToString(String nomeOperazione) {
-        char codiceOperazione = nomeOperazione.charAt(0);
-        return codiceOperazione;
+        return nomeOperazione.charAt(0);
     }
 
     //prende una parola in input e controlla se è uguale alle parole presenti dentro l'array
