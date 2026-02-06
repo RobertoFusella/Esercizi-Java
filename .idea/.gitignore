@@ -10,8 +10,6 @@
 /httpRequests/
 .idea/
 out/
-**/out/
-/out/
 *.iml
 bin/
 .DS_Store
