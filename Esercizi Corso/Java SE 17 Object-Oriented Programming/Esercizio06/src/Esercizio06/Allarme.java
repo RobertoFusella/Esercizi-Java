@@ -1,9 +1,11 @@
-package Esercizio05;
+package Esercizio06;
 
 import java.time.LocalDateTime;
 
 public class Allarme {
-    private boolean active;
+    //rendendo l'attributo protected lo stiamo rendendo visibile anche per le classi figlie
+    //ma anche visibile nello stesso pacchetto
+    protected boolean active;
     //rendendo messaggio final stiamo dicendo che non può
     //più essere cambiato una volta assegnato e il suo valore deve essere
     //assegnato sennò il compilatore darà errore
@@ -11,8 +13,8 @@ public class Allarme {
     //LocalDateTime è una classe di java che specifica un momento preciso nel tempo
     private LocalDateTime dormiFino;
 
-    public Allarme(String messaggio) {
-        this.messaggio = messaggio;
+    public Allarme(String message) {
+        this.messaggio = message;
         //chiamiamo il metodo nel costruttore per dire che
         //la sveglia non è attiva
         nonDormendo();
