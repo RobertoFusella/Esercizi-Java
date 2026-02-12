@@ -1,6 +1,5 @@
 package Esercizio07;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class AllarmeConOrario extends Allarme{
