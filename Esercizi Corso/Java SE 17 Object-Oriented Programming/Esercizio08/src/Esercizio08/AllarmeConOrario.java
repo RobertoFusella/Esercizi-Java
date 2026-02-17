@@ -1,8 +1,8 @@
-package Esercizio07;
+package Esercizio08;
 
 import java.time.LocalTime;
 
-public class AllarmeConOrario extends Allarme{
+public class AllarmeConOrario extends Allarme {
 
     public AllarmeConOrario(String messaggio) {
         super(messaggio);

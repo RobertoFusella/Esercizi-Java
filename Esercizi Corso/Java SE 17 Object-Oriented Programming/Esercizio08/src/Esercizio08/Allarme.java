@@ -1,11 +1,11 @@
-package Esercizio07;
+package Esercizio08;
 
 import java.time.LocalDateTime;
-
-public class Allarme {
+import java.awt.Color;
+public abstract class Allarme implements OggettoPersistente, Widged {
     //rendendo l'attributo protected lo stiamo rendendo visibile anche per le classi figlie
     //ma anche visibile nello stesso pacchetto
-    protected boolean active;
+    protected boolean accesso;
     //rendendo messaggio final stiamo dicendo che non può
     //più essere cambiato una volta assegnato e il suo valore deve essere
     //assegnato sennò il compilatore darà errore
@@ -19,9 +19,27 @@ public class Allarme {
         //la sveglia non è attiva
         nonDormendo();
     }
+    //metodi dichiarati nelle interfacce e implementati nella classe padre
+    @Override
+    public String getMessaggioDiAiuto() {
+        return "sono una sveglia. puoi accendermi o spegnermi e posticiparmi";
+    }
+    //metodi dichiarati nelle interfacce e implementati nella classe padre
+    @Override
+    public void salva() {
+        System.out.println("Salvando...");
+    }
 
-    public boolean isActive() {
-        return active;
+    //metodo per aggiungere colori agli allarmi
+    //vogliamo AllarmeAdAltaVisibilita arancione e AllarmePrioritario verde
+    //ma Allarme non ha un colore quindi dobbiamo rendere la classe astratta
+    //rendendola astratta non possiamo più istanziare un Allarme ma solo le classi figlie(upcasting)
+    public Color getColore(){
+        return null;
+    }
+
+    public boolean isAccesso() {
+        return accesso;
     }
 
     public String getMessaggio() {
@@ -38,19 +56,19 @@ public class Allarme {
 
     //metodo che accende l'allarme
     public void accendiAllarme() {
-        active = true;
+        accesso = true;
         nonDormendo();
     }
 
     //metodo che spegne l'allarme
     public void spegniAllarme() {
-        active = false;
+        accesso = false;
         nonDormendo();
     }
 
     //questo metodo serve a dire aggiungi 5min rispetto al tempo attuale
     public void dormi() {
-        if (active) {
+        if (accesso) {
             dormiFino = LocalDateTime.now().plusMinutes(5);
         }
     }
@@ -75,7 +93,7 @@ public class Allarme {
     //se false rimane come è
     public String riceviNotifica(boolean maiuscola) {
         //controlla se la sveglia è attiva e staDormendo è true
-        if (active && !staDormendo()) {
+        if (accesso && !staDormendo()) {
             if (maiuscola) {
                 return messaggio.toUpperCase();
             } else {

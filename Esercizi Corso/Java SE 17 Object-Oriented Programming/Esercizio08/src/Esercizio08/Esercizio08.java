@@ -1,13 +1,7 @@
-package Esercizio07;
+package Esercizio08;
 
-public class Esercizio07 {
+public class Esercizio08 {
     static void main(String[] args) throws InterruptedException {
-        Allarme allarme = new Allarme("temperatura troppo alta");
-        allarme.accendiAllarme();
-        allarme.staDormendo();
-        Thread.sleep(5000);
-        allarme.inviaNotifica();
-
         AllarmePrioritario allarmePrioritario = new AllarmePrioritario("temperatura troppo alta", 5000);
         allarmePrioritario.accendiAllarme();
         allarmePrioritario.staDormendo();
@@ -54,5 +48,23 @@ public class Esercizio07 {
 
         System.out.println(allarmePrioritarioDowncastingProva.getPriorita());
         }
+        //esempio classe astratta
+        //dato che Allarme adesso è astratta e non può più essere istanziata facciamo l'upcasting
+        //per usare le classi figlie(che ereditano tutto dalla classe padre Allarme anche se astratta)
+        System.out.println("----esempio classe astratta----");
+        Allarme allarmeArancione = new AllarmeAdAltaVisibilita("prova con colori");
+        System.out.println(allarmeArancione.getColore());
+        Allarme allarmeVerde = new AllarmePrioritario("prova con colori",100);
+        System.out.println(allarmeVerde.getColore());
+
+        //esempio interfacce
+        //le interfacce sono come dei "contratti", se una classe accetta questo contratto deve
+        //implementare i metodi che sono presenti dentro le interfacce obbligatoriamente
+        //almeno che la classe non è astratta ma le classi figlie devono
+        System.out.println("----esempio classe astratta----");
+        AllarmeAdAltaVisibilita allarmeInterfaccia = new AllarmeAdAltaVisibilita("prova interfaccia");
+        allarmeInterfaccia.accendiAllarme();
+        System.out.println(allarmeInterfaccia.getMessaggioDiAiuto());
+        allarmeInterfaccia.salva();
     }
 }

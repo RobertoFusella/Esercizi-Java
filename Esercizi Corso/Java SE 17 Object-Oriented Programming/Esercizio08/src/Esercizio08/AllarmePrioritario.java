@@ -1,4 +1,6 @@
-package Esercizio07;
+package Esercizio08;
+
+import java.awt.*;
 
 //classe figlia che estende Allarme, eredita tutti i suoi attributi e metodi
 public class AllarmePrioritario extends Allarme {
@@ -11,6 +13,11 @@ public class AllarmePrioritario extends Allarme {
     public AllarmePrioritario(String messaggio, int priorita) {
         super(messaggio);
         this.priorita = priorita;
+    }
+    //override del metodo presente nella classe padre
+    @Override
+    public Color getColore() {
+        return Color.GREEN;
     }
 
     public int getPriorita() {
