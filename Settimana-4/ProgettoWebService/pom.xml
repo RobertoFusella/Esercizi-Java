@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- project: elemento radice del POM (Project Object Model),
+contiene tutta la configurazione del progetto Maven -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.esempio</groupId>
+    <artifactId>ProgettoWebService</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- modules: elenco dei moduli figli inclusi nel progetto multi-modulo -->
+    <modules>
+        <!-- module: nome della cartella di un modulo incluso nella build -->
+        <module>WebServiceModel</module>
+        <module>WebServiceClient</module>
+    </modules>
+    <!-- properties: definizione di proprietà riutilizzabili nel POM -->
+    <properties>
+        <!-- maven.compiler.source: versione del linguaggio Java usata per il codice sorgente -->
+        <maven.compiler.source>25</maven.compiler.source>
+        <!-- maven.compiler.target: versione della JVM per cui viene compilato il bytecode -->
+        <maven.compiler.target>25</maven.compiler.target>
+        <!-- project.build.sourceEncoding: codifica dei file sorgente del progetto -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

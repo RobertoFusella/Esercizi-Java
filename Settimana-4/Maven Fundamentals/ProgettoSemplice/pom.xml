@@ -148,6 +148,92 @@
                     <release>17</release>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+
+                <executions>
+                    <!-- execution: definisce una specifica esecuzione del plugin,
+                         cioè indica che il plugin deve essere eseguito in un certo
+                         punto del ciclo di vita della build -->
+                    <execution>
+                        <goals>
+                            <!-- goal: indica l'azione concreta che il plugin deve eseguire.
+                                 Qui viene eseguito il goal "jar" -->
+                            <goal>jar</goal>
+                        </goals>
+
+                        <!-- phase: specifica in quale fase del ciclo di vita di Maven
+                             deve essere eseguito il goal.
+                             In questo caso durante la fase "install"
+                             questo andrà a generare anche un file jar dentro la cartella target
+                             pronto per essere usato da altri utenti-->
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <!--plugin per generare un javadoc in questo caso quando facciamo la
+                install ci darà dei warning perchè non sono presenti docs
+                (per trovare il docs andare nella cartella apidocs e aprire index)-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <!-- profiles: permette di definire configurazioni alternative
+         attivabili in base all’ambiente (es. dev, prod, test, ecc.) -->
+    <profiles>
+        <!-- profile: definisce un profilo specifico -->
+        <profile>
+            <!-- id: nome del profilo, usato per attivarlo (es. -Pdev) -->
+            <id>dev</id>
+            <!-- activation: definisce le condizioni di attivazione del profilo -->
+            <activation>
+                <!-- activeByDefault: se true, il profilo è attivo di default
+                     quando non viene specificato nessun altro profilo -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <!-- build: configurazioni di build valide solo quando
+                 questo profilo è attivo -->
+            <build>
+                <!-- resources: definisce le cartelle di risorse da includere -->
+                <resources>
+                    <!-- resource: singola cartella di risorse -->
+                    <resource>
+                        <!-- directory: percorso della cartella da includere
+                             come risorsa nel progetto -->
+                        <directory>src/main/resources/dev</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <!-- Secondo profilo -->
+        <profile>
+            <!-- id: nome del profilo, attivabile con -Pprod -->
+            <id>prod</id>
+            <!-- build: configurazioni valide solo quando il profilo prod è attivo -->
+            <build>
+                <resources>
+                    <resource>
+                        <!-- directory: cartella delle risorse per l’ambiente produzione -->
+                        <directory>src/main/resources/prod</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
 </project>

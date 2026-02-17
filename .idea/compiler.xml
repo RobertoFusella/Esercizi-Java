@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="WebServiceClient" />
         <module name="ProgettoSemplice" />
+        <module name="WebServiceModel" />
       </profile>
     </annotationProcessing>
   </component>
