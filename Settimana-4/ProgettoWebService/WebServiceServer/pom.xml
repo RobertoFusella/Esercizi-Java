@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>WebServiceClient</artifactId>
+    <artifactId>WebServiceServer</artifactId>
 
     <dependencies>
         <!-- dependency: dichiara un jar esterno o un modulo interno di cui il progetto ha bisogno -->
@@ -28,6 +28,15 @@ Maven scaricherà (o utilizzerà) quel JAR quando compila o costruisce il proget
 ${project.version} fa sì che il progetto dipenda dalla stessa versione del modulo padre
 o dello stesso progetto, così non bisogna specificarla manualmente.
              -->
+        </dependency>
+        <dependency>
+<!--        esempio di utilizzo del BOM, qui stiamo usando
+            la stessa dependency presente dentro il ProgettoWebService
+            senza specificare la versione perchè già definita nel BOM.
+            Fondamentale per evitare conflitti di versioni all'interno di
+            un progetto-->
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
         </dependency>
     </dependencies>
 

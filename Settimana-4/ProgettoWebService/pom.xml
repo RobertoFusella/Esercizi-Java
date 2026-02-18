@@ -9,6 +9,11 @@ contiene tutta la configurazione del progetto Maven -->
     <groupId>org.esempio</groupId>
     <artifactId>ProgettoWebService</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!-- packaging=pom:
+         indica che il progetto NON produce un jar/war,
+         ma funge da Parent POM e da BOM (Bill Of Materials).
+         È necessario per centralizzare versioni e configurazioni
+         condivise tra i moduli figli. -->
     <packaging>pom</packaging>
 
     <!-- modules: elenco dei moduli figli inclusi nel progetto multi-modulo -->
@@ -16,7 +21,68 @@ contiene tutta la configurazione del progetto Maven -->
         <!-- module: nome della cartella di un modulo incluso nella build -->
         <module>WebServiceModel</module>
         <module>WebServiceClient</module>
+        <module>WebServiceServer</module>
     </modules>
+
+    <!-- dependencyManagement:
+         SEZIONE PRINCIPALE DEL BOM.
+         Serve a definire le VERSIONI delle dipendenze
+         senza includerle automaticamente nel progetto.
+         I moduli figli erediteranno queste versioni
+         e potranno omettere il tag <version>. -->
+    <dependencyManagement>
+        <!-- dependencies:
+             elenco delle dipendenze gestite centralmente dal BOM -->
+        <dependencies>
+            <!-- dependency:
+                 definisce una libreria la cui versione viene
+                 centralizzata nel BOM. Non viene aggiunta
+                 automaticamente: deve essere dichiarata
+                 nei moduli figli per essere utilizzata. -->
+            <dependency>
+                <!-- groupId:
+                     identifica l'organizzazione che fornisce la libreria.
+                     Qui si tratta del progetto SLF4J.(la uso solo come esempio di BOM) -->
+                <groupId>org.slf4j</groupId>
+                <!-- artifactId:
+                     nome dell'artefatto specifico (libreria).
+                     slf4j-api è l'interfaccia di logging
+                     (non l'implementazione concreta). -->
+                <artifactId>slf4j-api</artifactId>
+                <!-- version:
+                     versione ufficiale centralizzata nel BOM.
+                     Tutti i moduli figli che dichiarano
+                     questa dipendenza senza specificare
+                     la versione useranno automaticamente la 2.0.10. -->
+                <version>2.0.10</version>
+            </dependency>
+
+            <!-- dependency con import:
+                 Questa dependency importa un BOM esterno (qui Spring Boot)
+                 nel dependencyManagement del progetto.
+                 type="pom" indica che non è una libreria eseguibile,
+                 ma un POM contenente configurazioni e versioni.
+                 scope="import" dice a Maven di importare solo il
+                 dependencyManagement del POM esterno.
+                 Funzione:
+                 Centralizza le versioni di tutte le librerie definite nel BOM
+                 Permette ai moduli figli di usare queste dependency senza
+                 specificare il tag <version>
+                 Non aggiunge alcuna libreria al classpath
+                 Garantisce compatibilità tra le versioni delle librerie
+                 importate.
+                 In poche parole, permette di ereditare le versioni
+                 di tutte le dipendenze già configurate dal BOM esterno. -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>3.2.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <!-- properties: definizione di proprietà riutilizzabili nel POM -->
     <properties>
         <!-- maven.compiler.source: versione del linguaggio Java usata per il codice sorgente -->
@@ -26,5 +92,4 @@ contiene tutta la configurazione del progetto Maven -->
         <!-- project.build.sourceEncoding: codifica dei file sorgente del progetto -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>
