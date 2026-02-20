@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.monotonic.collections._3_lists.before.ShipmentTest" tests="5" skipped="5" failures="0" errors="0" timestamp="2026-02-18T10:52:52" hostname="PC163" time="0.001">
+  <properties/>
+  <testcase name="shouldNotReplaceMissingItems" classname="com.monotonic.collections._3_lists.before.ShipmentTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="shouldReplaceItems" classname="com.monotonic.collections._3_lists.before.ShipmentTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="shouldStripHeavyProducts" classname="com.monotonic.collections._3_lists.before.ShipmentTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="shouldIdentifyVanRequirements" classname="com.monotonic.collections._3_lists.before.ShipmentTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="shouldAddItems" classname="com.monotonic.collections._3_lists.before.ShipmentTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
