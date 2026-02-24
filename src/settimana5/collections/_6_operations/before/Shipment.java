@@ -3,6 +3,7 @@ package settimana5.collections._6_operations.before;
 import settimana5.collections.common.Product;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,8 +45,8 @@ public class Shipment implements Iterable<Product>
         int splitPoint = findSplitPoint();
 
         // create two subviews of the list
-        lightVanProducts = products.subList(0, splitPoint);
-        heavyVanProducts = products.subList(splitPoint, products.size());
+        lightVanProducts = Collections.unmodifiableList(products.subList(0, splitPoint));
+        heavyVanProducts = Collections.unmodifiableList(products.subList(splitPoint, products.size()));
     }
 
     private int findSplitPoint()

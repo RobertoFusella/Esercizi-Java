@@ -27,6 +27,11 @@ public class StreamProducts {
                 .sorted(comparingInt(Product::getWeight))
                 //ordiniamo i prodotti in base al peso (dal più leggero al più pesante)
                 .collect(Collectors.groupingBy(Product::getName));
+                // Raccoglie gli elementi di uno stream e li raggruppa secondo un criterio
+                // In questo caso, il criterio è il nome del prodotto
+                // Il collector "groupingBy" crea una mappa dove:
+                //- La chiave (key) è il valore restituito da Product::getName (cioè il nome del prodotto)
+                //- Il valore (value) è una lista di tutti i prodotti che hanno quel nome
 
         System.out.println("Esempio senza Stream");
         System.out.println(namesOfLightProductsWeightSortedLoop(products));
