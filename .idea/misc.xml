@@ -9,7 +9,23 @@
         <option value="$PROJECT_DIR$/Settimana-4/ProgettoWebService/pom.xml" />
         <option value="$PROJECT_DIR$/carvedrockfitness_no_log/pom.xml" />
         <option value="$PROJECT_DIR$/Settimana5 esercizio sui log/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana6EsercizioSuiLog/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana6 esercizio sui log/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana7 corse-info/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana-1/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana2/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/settimana3/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana3/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana4/pom.xml" />
+        <option value="$PROJECT_DIR$/Settimana5/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Settimana6EsercizioSuiLog/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/settimana3/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_25" project-jdk-name="openjdk-25" project-jdk-type="JavaSDK">

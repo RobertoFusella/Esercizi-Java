@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Esercizi-Java.iml" filepath="$PROJECT_DIR$/.idea/Esercizi-Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Maven Fundamentals/ProgettoSemplice/ProgettoSemplice.iml" filepath="$PROJECT_DIR$/Maven Fundamentals/ProgettoSemplice/ProgettoSemplice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana1/Settimana1.iml" filepath="$PROJECT_DIR$/Settimana1/Settimana1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana6/Settimana6.iml" filepath="$PROJECT_DIR$/Settimana6/Settimana6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient.iml" filepath="$PROJECT_DIR$/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel.iml" filepath="$PROJECT_DIR$/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Maven Fundamentals/ProgettoWebService/WebServiceServer/WebServiceServer.iml" filepath="$PROJECT_DIR$/Maven Fundamentals/ProgettoWebService/WebServiceServer/WebServiceServer.iml" />
     </modules>
   </component>
 </project>
