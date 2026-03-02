@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Settimana3" />
         <module name="Settimana2" />
-        <module name="Settimana7-corse-info" />
         <module name="Settimana5" />
         <module name="Settimana4" />
+        <module name="course-info-repository" />
+        <module name="course-info-cli" />
         <module name="Esercizi-Java" />
       </profile>
     </annotationProcessing>
