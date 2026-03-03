@@ -12,6 +12,7 @@
         <module name="Settimana4" />
         <module name="course-info-repository" />
         <module name="course-info-cli" />
+        <module name="course-info-server" />
         <module name="Esercizi-Java" />
       </profile>
     </annotationProcessing>
