@@ -12,6 +12,8 @@ public interface CourseRepository {
     // Il service non deve conoscere come viene salvato (DB, file, ecc.)
     void saveCourse(Course course);
 
+    void addNote(String id, String notes);
+
     // Restituisce tutti i corsi presenti nel repository.
     // Ritorna una lista di oggetti Course.
     List<Course> getAllCourses();

@@ -4,6 +4,7 @@ import com.org.courseinforepository.CourseRepository;
 import com.org.esempio.courseinfo.domain.Course;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CourseStorageService {
 
@@ -46,8 +47,7 @@ public class CourseStorageService {
                     psCourse.id(),
                     psCourse.title(),
                     psCourse.durationInMinutes(),
-                    PS_BASE_URL + psCourse.contentUrl()
-            );
+                    PS_BASE_URL + psCourse.contentUrl(), Optional.empty());
 
             // Salvataggio del corso tramite repository
             // Il service delega completamente la persistenza al repository.
