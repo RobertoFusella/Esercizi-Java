@@ -17,10 +17,10 @@
         <module name="library-app" />
         <module name="course-info-cli" />
         <module name="course-info-server" />
-        <module name="Esercizi-Java" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Esercizi-Java" target="21" />
       <module name="ProgettoSemplice" target="17" />
       <module name="ProgettoWebService" target="25" />
       <module name="Settimana-1" target="25" />
