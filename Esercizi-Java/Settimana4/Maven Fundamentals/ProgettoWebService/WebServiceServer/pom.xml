@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.esempio</groupId>
+        <artifactId>ProgettoWebService</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>WebServiceServer</artifactId>
+
+    <dependencies>
+        <!-- dependency: dichiara un jar esterno o un modulo interno di cui il progetto ha bisogno -->
+        <dependency>
+            <!-- groupId: identifica l'organizzazione o il gruppo che pubblica il pacchetto -->
+            <groupId>org.esempio</groupId>
+            <!-- artifactId: nome del pacchetto o modulo su cui il progetto dipende -->
+            <artifactId>WebServiceModel</artifactId>
+            <!-- version: versione della dipendenza.
+                 Qui viene usata la proprietà ${project.version} per indicare
+                 che si usa la stessa versione del progetto corrente -->
+            <version>${project.version}</version>
+            <!--
+Dichiara che il progetto dipende dal modulo o artefatto WebServiceModel del gruppo org.esempio.
+Maven scaricherà (o utilizzerà) quel JAR quando compila o costruisce il progetto.
+${project.version} fa sì che il progetto dipenda dalla stessa versione del modulo padre
+o dello stesso progetto, così non bisogna specificarla manualmente.
+             -->
+        </dependency>
+        <dependency>
+<!--        esempio di utilizzo del BOM, qui stiamo usando
+            la stessa dependency presente dentro il ProgettoWebService
+            senza specificare la versione perchè già definita nel BOM.
+            Fondamentale per evitare conflitti di versioni all'interno di
+            un progetto-->
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
