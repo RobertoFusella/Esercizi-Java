@@ -1,4 +1,0 @@
-add 4 four
-subtract eight two prova
-multiply seven 6
-divide 6 2
