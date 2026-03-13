@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.esempio</groupId>
+        <artifactId>Settimana7-corse-info</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>course-info-server</artifactId>
+    <properties>
+        <slf4j.version>2.0.17</slf4j.version>
+        <jersey.version>3.1.5</jersey.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.esempio</groupId>
+            <artifactId>course-info-repository</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-grizzly2-http</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${jersey.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+            <version>2.17.2</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin che serve a creare uno "shaded jar",
+                 cioè un JAR che contiene anche tutte le librerie dipendenti -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <!-- Dice a Maven quando eseguire questo plugin.
+                             In questo caso durante la fase "package"
+                             (quando Maven crea il file .jar del progetto). -->
+                        <phase>package</phase>
+                        <goals>
+                            <!-- Il goal "shade" dice al plugin di:
+                            - prendere il jar del progetto
+                            - prendere tutte le dipendenze
+                            - unirle in un unico jar -->
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <!-- I transformers servono per gestire file speciali
+                             che esistono dentro i jar delle librerie.
+                             Se due librerie contengono lo stesso file,
+                             bisogna dire al plugin come comportarsi. -->
+                            <transformers>
+                                <!-- Questo transformer modifica il file
+                                 META-INF/MANIFEST.MF del jar finale.
+                                 Il MANIFEST è il file che contiene
+                                 le informazioni principali del jar
+                                 (versione, autore, main class ecc.) -->
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+
+                                    <!-- Qui diciamo qual è la classe principale
+                                     del programma.
+                                     Questa è la classe che contiene:
+                                     public static void main(String[] args)
+                                     Maven scriverà questa informazione
+                                     dentro il MANIFEST del jar.
+                                     Così il jar diventa eseguibile con:
+                                     java -jar file.jar -->
+                                    <mainClass>
+                                        com.org.esempio.courseinfo.server.CourseServer
+                                    </mainClass>
+
+                                </transformer>
+                                <!-- Questo transformer serve a unire i file
+                                 META-INF/services delle varie librerie.
+                                 Molti framework (come Jersey o sistemi
+                                 di dependency injection) usano questi file
+                                 per scoprire automaticamente le classi
+                                 disponibili.
+                                 Se non li unisci correttamente,
+                                 alcune librerie potrebbero non funzionare
+                                 nel jar finale. -->
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
