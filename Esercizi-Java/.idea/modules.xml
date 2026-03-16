@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel.iml" />
       <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceServer/WebServiceServer.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceServer/WebServiceServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizi Corso/student-manager.iml" filepath="$PROJECT_DIR$/Esercizi Corso/student-manager.iml" />
     </modules>
   </component>
 </project>
