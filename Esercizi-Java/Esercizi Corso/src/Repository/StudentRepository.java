@@ -84,4 +84,24 @@ public class StudentRepository {
             LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
+
+    public Student findById(int id) {
+        String sql = "SELECT * FROM students WHERE id = ?";
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String nome = rs.getString("nome");
+                int voto = rs.getInt("voto");
+                return new Student(id, nome, voto);
+            }
+
+        } catch (SQLException ex) {
+            LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+        }
+        return null;
+    }
 }

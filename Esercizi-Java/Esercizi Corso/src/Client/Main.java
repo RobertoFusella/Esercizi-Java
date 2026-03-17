@@ -20,14 +20,16 @@ GET request
 /*
 JDBC Aggiungi:FATTO findAll(),FATTO delete(id), FATTO update voto
 
-REST Aggiungi endpoints:GET /students,GET /students/{id},POST /students,DELETE /students/{id}
+REST Aggiungi endpoints:FATTO GET /students/{id},POST /students,DELETE /students/{id}
 
 HTTP Scrivi client che:FATTO inserisce studente,FATTO legge studenti,FATTO elimina studente
 */
 public class Main {
     public static void main(String[] args) {
         final Logger LOGGER = Logger.getLogger(Main.class.getName());
-        StudentServer studentServer = new StudentServer("http://localhost:8000/students");
+        StudentService studentService = new StudentService();
+        StudentHttp studentHttp = new StudentHttp(studentService);
+        StudentServer studentServer = new StudentServer("http://localhost:8000");
 //        studentService.addStudent(new Student(1,"Roberto",6));
 //        studentService.addStudent(new Student(2,"Rodrigo",4));
 //        studentService.addStudent(new Student(3,"Antonio",3));
@@ -41,13 +43,14 @@ public class Main {
         //studentService.getAll().forEach(System.out::println);
 
         try {
-            Student student = new Student("Marty",10);
+            Student student = new Student("prova",100);
             //studentRepository.save(student);
             //studentRepository.delete(9);
             //studentRepository.updateVoto(10,30);
             //studentService.loadFromDB(studentRepository.findAll());
             //System.out.println(studentService.getAll());
-            studentServer.updateStudentVoto(8,30);
+            studentHttp.startServer();
+            System.out.println(studentServer.getAllStudents());
         } catch (Exception ex) {
 
             LOGGER.log(Level.SEVERE, "errore nel salvataggio studente", ex);
