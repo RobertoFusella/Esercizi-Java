@@ -1,17 +1,27 @@
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\account\Account.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\CarvedRockFitness.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\order\Order.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\order\OrderController.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\order\OrderRepository.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\order\OrderService.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\order\OrderStatus.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\product\Product.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\product\ProductRepository.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\user\User.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\user\UserController.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\user\UserRepository.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\user\UserService.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\user\UserStatus.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\carvedrockfitness\util\LoggingUtil.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\esempioLog4j\EsempioLog4j.java
-C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6 esercizio sui log\src\main\java\esempioSlf4j\EsempioSlf4j.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio02\Main.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio02\MathOperation.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio03\Main.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio03\MathOperation.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio04\InvalidStatementException.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio04\Main.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio04\MathOperation.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio05\InvalidStatementException.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio05\Main.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Exception\Esercizio05\MathOperation.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\account\Account.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\CarvedRockFitness.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\order\Order.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\order\OrderController.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\order\OrderRepository.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\order\OrderService.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\order\OrderStatus.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\product\Product.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\product\ProductRepository.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\user\User.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\user\UserController.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\user\UserRepository.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\user\UserService.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\user\UserStatus.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\carvedrockfitness\util\LoggingUtil.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\esempioLog4j\EsempioLog4j.java
+C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana6\src\main\java\Logs\esempioSlf4j\EsempioSlf4j.java

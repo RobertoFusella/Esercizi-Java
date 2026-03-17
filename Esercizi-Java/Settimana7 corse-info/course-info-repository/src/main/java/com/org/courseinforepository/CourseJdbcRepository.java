@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-class CourseJdbcRepository implements CourseRepository {
+public class CourseJdbcRepository implements CourseRepository {
 
     // Stringa di connessione JDBC per il database H2.
     // jdbc:h2:file: indica che il database è salvato su file.

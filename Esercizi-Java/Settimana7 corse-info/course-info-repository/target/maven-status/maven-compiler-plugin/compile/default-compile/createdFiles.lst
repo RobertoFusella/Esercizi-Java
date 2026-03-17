@@ -1,0 +1,4 @@
+com\org\esempio\courseinfo\domain\Course.class
+com\org\courseinforepository\CourseJdbcRepository.class
+com\org\courseinforepository\RepositoryException.class
+com\org\courseinforepository\CourseRepository.class

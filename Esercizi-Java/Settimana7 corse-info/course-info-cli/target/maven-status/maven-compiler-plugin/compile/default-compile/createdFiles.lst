@@ -1,0 +1,4 @@
+org\esempio\courseinfo\cli\service\CourseStorageService.class
+org\esempio\courseinfo\cli\service\PluralsightCourse.class
+org\esempio\courseinfo\cli\service\CourseRetrievalService.class
+org\esempio\courseinfo\cli\CourseRetriever.class

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.esempio.courseinfo.cli.service.CourseStorageServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s -- in org.esempio.courseinfo.cli.service.CourseStorageServiceTest

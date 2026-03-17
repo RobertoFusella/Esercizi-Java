@@ -1,8 +1,4 @@
 package Exception.Esercizio04;
-
-import settimana6.Exception.Esercizio05.InvalidStatementException;
-import settimana6.Exception.Esercizio05.MathOperation;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

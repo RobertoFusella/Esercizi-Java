@@ -11,8 +11,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Settimana3" />
         <module name="Settimana2" />
+        <module name="Settimana-1" />
         <module name="Settimana5" />
         <module name="Settimana4" />
+        <module name="Settimana6EsercizioSuiLog" />
         <module name="course-info-repository" />
         <module name="library-app" />
         <module name="course-info-cli" />
@@ -24,10 +26,8 @@
       <module name="Esercizi-Java" target="21" />
       <module name="ProgettoSemplice" target="17" />
       <module name="ProgettoWebService" target="25" />
-      <module name="Settimana-1" target="25" />
       <module name="Settimana5 esercizio sui Log" target="17" />
       <module name="Settimana6 esercizio sui log" target="17" />
-      <module name="Settimana6EsercizioSuiLog" target="17" />
       <module name="Settimana6EsercizioSuiLog (1)" target="9" />
       <module name="WebServiceClient" target="25" />
       <module name="WebServiceModel" target="25" />

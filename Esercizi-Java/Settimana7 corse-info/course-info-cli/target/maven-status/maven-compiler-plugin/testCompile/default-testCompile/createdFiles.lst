@@ -1,0 +1,3 @@
+org\esempio\courseinfo\cli\service\CourseStorageServiceTest.class
+org\esempio\courseinfo\cli\service\CourseStorageServiceTest$InMemoryCourseRepository.class
+org\esempio\courseinfo\cli\service\PluralsightCourseTest.class
