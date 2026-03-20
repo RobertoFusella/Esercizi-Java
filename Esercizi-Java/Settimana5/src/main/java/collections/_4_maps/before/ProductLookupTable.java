@@ -1,7 +1,6 @@
 package collections._4_maps.before;
 
-public interface ProductLookupTable
-{
+public interface ProductLookupTable {
     Product lookupById(int id);
 
     void addProduct(Product productToAdd);

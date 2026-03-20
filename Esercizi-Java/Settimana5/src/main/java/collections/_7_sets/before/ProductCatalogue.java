@@ -5,22 +5,19 @@ import collections.common.Supplier;
 
 import java.util.*;
 
-public class ProductCatalogue implements Iterable<Product>
-{
+public class ProductCatalogue implements Iterable<Product> {
     private final NavigableSet<Product> products = new TreeSet<>(Product.BY_WEIGHT);
-    public void addSupplier(final Supplier supplier)
-    {
+
+    public void addSupplier(final Supplier supplier) {
         products.addAll(supplier.getProducts());
     }
 
     @Override
-    public Iterator<Product> iterator()
-    {
+    public Iterator<Product> iterator() {
         return products.iterator();
     }
 
-    public Set<Product> findLighterProducts(final Product product)
-    {
+    public Set<Product> findLighterProducts(final Product product) {
         return products.headSet(product);
     }
 }

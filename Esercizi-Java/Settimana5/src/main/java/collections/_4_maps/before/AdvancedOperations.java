@@ -6,7 +6,7 @@ public class AdvancedOperations {
     public static void main(String[] args) {
         Product defaultProduct = new Product(-1, "Whatever the customer wants", 100);
 
-        HashMap<Integer, Product> idToProduct = new HashMap<Integer, Product>();
+        HashMap<Integer, Product> idToProduct = new HashMap<>();
         idToProduct.put(1, ProductFixtures.door);
         idToProduct.put(2, ProductFixtures.floorPanel);
         idToProduct.put(3, ProductFixtures.window);

@@ -20,6 +20,7 @@
         <module name="course-info-cli" />
         <module name="course-info-server" />
         <module name="student-manager" />
+        <module name="Settimana8" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

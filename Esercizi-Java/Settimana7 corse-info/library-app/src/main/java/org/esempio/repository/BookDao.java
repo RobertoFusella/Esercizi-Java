@@ -58,56 +58,87 @@ public class BookDao extends AbstractDao implements Dao<Book> {
         return book;
     }
 
-    // Implementazione del metodo findAll() dell'interfaccia Dao
-    // Restituisce tutti i libri presenti nel database
     @Override
     public List<Book> findAll() {
-        // Inizializza la lista dei libri come vuota (Collections.emptyList è immutabile)
+
+        // inizializza la lista come vuota (immutabile)
         List<Book> books = Collections.emptyList();
 
-        // Definisce la query SQL da eseguire
-        // In questo caso seleziona tutte le colonne dalla tabella BOOK
-        String sql = "SELECT * FROM BOOK";
+        // crea una "classe anonima" che estende JdbcQueryTemplate<Book>
+        JdbcQueryTemplate<Book> template = new JdbcQueryTemplate<Book>() {
 
-        // Try-with-resources: apre e chiude automaticamente le risorse (Connection, Statement, ResultSet)
-        try (
-                // Ottiene la connessione al database tramite il metodo ereditato da AbstractDao
-                Connection con = getConnection();
-
-                // Crea un Statement che permette di eseguire query SQL statiche
-                Statement stmt = con.createStatement();
-
-                // Esegue la query SQL e ottiene i risultati in un ResultSet
-                ResultSet rset = stmt.executeQuery(sql)
-        ) {
-            // inizializziamo la lista dei libri come ArrayList (modificabile)
-            books = new ArrayList<>();
-
-            // Ciclo attraverso tutte le righe del ResultSet
-            // rset.next() restituisce true finché ci sono righe
-            while (rset.next()) {
-                // Crea un nuovo oggetto Book per ogni riga
+            @Override
+            public Book mapItem(ResultSet rset) throws SQLException {
+                // crea un oggetto Book per ogni riga del ResultSet
                 Book book = new Book();
 
-                // Imposta l'id del libro prendendolo dalla colonna "id"
-                book.setId(rset.getLong("id"));
+                // legge i valori dal database e li mappa nell'oggetto
+                book.setId(rset.getLong("ID"));
+                book.setTitle(rset.getString("TITLE"));
+                book.setRating(rset.getInt("RATING"));
 
-                // Imposta il titolo del libro prendendolo dalla colonna "title"
-                book.setTitle(rset.getString("title"));
-
-                // Aggiunge l'oggetto Book appena creato alla lista dei libri
-                books.add(book);
+                // restituisce il Book creato
+                return book;
             }
+        };
 
-        } catch (SQLException sqe) {
-            // In caso di errore SQL, stampa lo stack trace
-            sqe.printStackTrace();
-        }
+        // esegue la query SQL e usa mapItem() per trasformare ogni riga in Book
+        books = template.queryForList("SELECT ID, TITLE, RATING FROM BOOK");
 
-        // Restituisce la lista dei libri trovati
-        // Se la query non ha trovato nulla o c'è stato un errore, restituisce la lista vuota
+        // restituisce la lista dei libri
         return books;
     }
+
+    // Implementazione del metodo findAll() dell'interfaccia Dao
+    // Restituisce tutti i libri presenti nel database
+//    @Override
+//    public List<Book> findAll() {
+//        // Inizializza la lista dei libri come vuota (Collections.emptyList è immutabile)
+//        List<Book> books = Collections.emptyList();
+//
+//        // Definisce la query SQL da eseguire
+//        // In questo caso seleziona tutte le colonne dalla tabella BOOK
+//        String sql = "SELECT * FROM BOOK";
+//
+//        // Try-with-resources: apre e chiude automaticamente le risorse (Connection, Statement, ResultSet)
+//        try (
+//                // Ottiene la connessione al database tramite il metodo ereditato da AbstractDao
+//                Connection con = getConnection();
+//
+//                // Crea un Statement che permette di eseguire query SQL statiche
+//                Statement stmt = con.createStatement();
+//
+//                // Esegue la query SQL e ottiene i risultati in un ResultSet
+//                ResultSet rset = stmt.executeQuery(sql)
+//        ) {
+//            // inizializziamo la lista dei libri come ArrayList (modificabile)
+//            books = new ArrayList<>();
+//
+//            // Ciclo attraverso tutte le righe del ResultSet
+//            // rset.next() restituisce true finché ci sono righe
+//            while (rset.next()) {
+//                // Crea un nuovo oggetto Book per ogni riga
+//                Book book = new Book();
+//
+//                // Imposta l'id del libro prendendolo dalla colonna "id"
+//                book.setId(rset.getLong("id"));
+//
+//                // Imposta il titolo del libro prendendolo dalla colonna "title"
+//                book.setTitle(rset.getString("title"));
+//
+//                // Aggiunge l'oggetto Book appena creato alla lista dei libri
+//                books.add(book);
+//            }
+//
+//        } catch (SQLException sqe) {
+//            // In caso di errore SQL, stampa lo stack trace
+//            sqe.printStackTrace();
+//        }
+//
+//        // Restituisce la lista dei libri trovati
+//        // Se la query non ha trovato nulla o c'è stato un errore, restituisce la lista vuota
+//        return books;
+//    }
 
     @Override
     public Book create(Book book) {
@@ -142,6 +173,100 @@ public class BookDao extends AbstractDao implements Dao<Book> {
 
         // Restituisce l'oggetto Book, ora completo anche di ID generato dal database
         return book;
+    }
+
+    @Override
+    public Book update(Book book) {
+        // Query SQL:
+        // aggiorna la colonna TITLE della tabella BOOK
+        // per il record che ha un certo ID
+        String sql = "UPDATE BOOK SET TITLE = ? WHERE ID = ?";
+
+        try (
+                // apre la connessione al database (metodo ereditato)
+                Connection con = getConnection();
+
+                // PreparedStatement serve per eseguire query con parametri (?)
+                PreparedStatement prepStmt = con.prepareStatement(sql);
+        ) {
+            // sostituisce il primo ? con il titolo del libro
+            prepStmt.setString(1, book.getTitle());
+
+            // sostituisce il secondo ? con l'id del libro
+            prepStmt.setLong(2, book.getId());
+
+            // esegue l'UPDATE sul database
+            // aggiorna la riga corrispondente
+            prepStmt.executeUpdate();
+
+        } catch (SQLException sqe) {
+            // stampa eventuali errori SQL
+            sqe.printStackTrace();
+        }
+
+        // restituisce il libro aggiornato (l'oggetto Java, non ricaricato dal DB)
+        return book;
+    }
+
+    @Override
+    public int[] update(List<Book> books) {
+        // array che conterrà il risultato degli update
+        // ogni posizione indica quante righe sono state modificate per ogni query
+        int[] records = {};
+
+        // Query SQL:
+        // aggiorna TITLE e RATING per un certo ID
+        String sql = "UPDATE BOOK SET TITLE = ?, RATING = ? WHERE ID = ?";
+
+        try (
+                Connection con = getConnection();
+                PreparedStatement prepStmt = con.prepareStatement(sql);
+        ) {
+            // ciclo su tutti i libri della lista
+            for (Book book : books) {
+
+                // imposta il TITLE
+                prepStmt.setString(1, book.getTitle());
+
+                // imposta il RATING
+                prepStmt.setInt(2, book.getRating());
+
+                // imposta l'ID per la WHERE
+                prepStmt.setLong(3, book.getId());
+
+                // aggiunge la query al batch (non la esegue subito)
+                prepStmt.addBatch();
+            }
+
+            // esegue tutte le query insieme (più veloce)
+            records = prepStmt.executeBatch();
+
+        } catch (SQLException sqe) {
+            sqe.printStackTrace();
+        }
+
+        // ritorna array con risultati delle operazioni
+        return records;
+    }
+
+    @Override
+    public int delete(Book book) {
+        int rowsAffected = 0;
+        String sql = "DELETE FROM BOOK WHERE ID = ?";
+
+        try (
+                Connection con = getConnection();
+                PreparedStatement prepStmt = con.prepareStatement(sql);
+        ) {
+
+            prepStmt.setLong(1, book.getId());
+            rowsAffected = prepStmt.executeUpdate();
+
+        } catch (SQLException sqe) {
+            sqe.printStackTrace();
+        }
+
+        return rowsAffected;
     }
 
 

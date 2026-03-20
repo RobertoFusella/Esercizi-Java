@@ -43,7 +43,6 @@ public class CourseRetriever {
         // 2. Creo il repository dei corsi salvati
         // openCourseRepository restituisce un CourseJdbcRepository configurato su "./courses.db"
         CourseRepository courseRepository = CourseRepository.openCourseRepository("./courses.db");
-
         // 3. Creo il service per memorizzare i corsi nel repository
         CourseStorageService courseStorageService = new CourseStorageService(courseRepository);
 

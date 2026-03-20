@@ -6,10 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class CollectionConcepts
-{
-    public static void main(String[] args)
-    {
+public class CollectionConcepts {
+    public static void main(String[] args) {
         // Creazione di alcuni oggetti Product
         var door = new Product("Wooden Door", 35);
         var floorPanel = new Product("Floor Panel", 25);
@@ -41,7 +39,7 @@ public class CollectionConcepts
         // Il for-each è un modo semplice per iterare su tutti gli elementi
         // di una Collection senza dover gestire manualmente un Iterator.
         System.out.println("----esempio for each----");
-        for(var p : products){
+        for (var p : products) {
             System.out.println(p);  // Stampa ogni Product presente nella Collection
         }
 
@@ -53,9 +51,9 @@ public class CollectionConcepts
         System.out.println("----esempio di Iterator----");
         Iterator<Product> it = products.iterator(); // Otteniamo un Iterator sulla Collection
 
-        while(it.hasNext()){   // hasNext() restituisce true se ci sono ancora elementi
+        while (it.hasNext()) {   // hasNext() restituisce true se ci sono ancora elementi
             var product = it.next(); // next() restituisce il prossimo elemento
-            if (product.weight() > 20){ // Controllo sul peso
+            if (product.weight() > 20) { // Controllo sul peso
                 it.remove();   // Rimuove l'elemento corrente dalla Collection in modo sicuro
             }
         }

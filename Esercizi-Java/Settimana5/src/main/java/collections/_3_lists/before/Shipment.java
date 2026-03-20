@@ -5,10 +5,10 @@ import collections.common.Product;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 //Definisce la classe Shipment.
 //implements Iterable<Product> permette di usare l’oggetto Shipment in un ciclo for-each
-public class Shipment implements Iterable<Product>
-{
+public class Shipment implements Iterable<Product> {
     // Costante che rappresenta il valore restituito da indexOf()
     // quando un prodotto non viene trovato nella lista
     private static final int MISSING_PRODUCT = -1;
@@ -31,23 +31,21 @@ public class Shipment implements Iterable<Product>
     private List<Product> heavyVanProducts;
 
     // Metodo per aggiungere un prodotto alla spedizione
-    public void add(Product product)
-    {
+    public void add(Product product) {
         // Aggiunge il prodotto alla lista principale
         products.add(product);
     }
 
     // Metodo che sostituisce un prodotto esistente con uno nuovo
     // Restituisce true se la sostituzione è avvenuta, false altrimenti
-    public boolean replace(Product oldProduct, Product newProduct)
-    {
+    public boolean replace(Product oldProduct, Product newProduct) {
         // Cerca la posizione del prodotto da sostituire
         int position = products.indexOf(oldProduct);
 
         // Se il prodotto non è presente nella lista
-        if(position == MISSING_PRODUCT){
+        if (position == MISSING_PRODUCT) {
             return false;
-        }else{
+        } else {
             // Sostituisce il prodotto alla posizione trovata
             products.set(position, newProduct);
             return true;
@@ -56,8 +54,7 @@ public class Shipment implements Iterable<Product>
 
     // Metodo che prepara la spedizione dividendo i prodotti
     // tra furgone leggero e furgone pesante
-    public void prepare()
-    {
+    public void prepare() {
         // Ordina i prodotti in base al peso (dal più leggero al più pesante)
         // Product.BY_WEIGHT è un Comparator definito nella classe Product
         products.sort(Product.BY_WEIGHT);
@@ -77,16 +74,16 @@ public class Shipment implements Iterable<Product>
     // Metodo privato che individua il punto di divisione
     // tra prodotti leggeri e pesanti
     private int findSplitPoint() {
-        int size  = products.size();
+        int size = products.size();
 
         // Scorre tutti i prodotti
-        for (int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
 
             // Recupera il prodotto alla posizione corrente
             var product = products.get(i);
 
             // Se il peso supera il limite del furgone leggero
-            if(product.weight() > LIGHT_VAN_MAX_WEIGHT){
+            if (product.weight() > LIGHT_VAN_MAX_WEIGHT) {
                 // Restituisce l'indice come punto di divisione
                 return i;
             }
@@ -98,30 +95,26 @@ public class Shipment implements Iterable<Product>
     }
 
     // Restituisce la lista dei prodotti destinati al furgone pesante
-    public List<Product> getHeavyVanProducts()
-    {
+    public List<Product> getHeavyVanProducts() {
         return heavyVanProducts;
     }
 
     // Restituisce la lista dei prodotti destinati al furgone leggero
-    public List<Product> getLightVanProducts()
-    {
+    public List<Product> getLightVanProducts() {
         return lightVanProducts;
     }
 
     // Metodo richiesto dall'interfaccia Iterable<Product>
     // Permette di usare l'oggetto Shipment in un ciclo for-each
     @Override
-    public Iterator<Product> iterator()
-    {
+    public Iterator<Product> iterator() {
         // Restituisce l'iteratore della lista principale
         return products.iterator();
     }
 
     // Rimuove dalla lista principale tutti i prodotti
     // che superano il peso massimo del furgone leggero
-    public boolean stripHeavyProducts()
-    {
+    public boolean stripHeavyProducts() {
         // removeIf accetta una lambda:
         // rimuove ogni prodotto con peso > 20
         // restituisce true se almeno un elemento è stato rimosso

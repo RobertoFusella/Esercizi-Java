@@ -7,8 +7,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class Shipment implements Iterable<Product>
-{
+public class Shipment implements Iterable<Product> {
     private static final int LIGHT_VAN_MAX_WEIGHT = 20;
     private static final int MISSING_PRODUCT = -1;
 
@@ -17,27 +16,21 @@ public class Shipment implements Iterable<Product>
     private List<Product> lightVanProducts;
     private List<Product> heavyVanProducts;
 
-    public void add(Product product)
-    {
+    public void add(Product product) {
         products.add(product);
     }
 
-    public boolean replace(Product oldProduct, Product newProduct)
-    {
+    public boolean replace(Product oldProduct, Product newProduct) {
         int position = products.indexOf(oldProduct);
-        if (position == MISSING_PRODUCT)
-        {
+        if (position == MISSING_PRODUCT) {
             return false;
-        }
-        else
-        {
+        } else {
             products.set(position, newProduct);
             return true;
         }
     }
 
-    public void prepare()
-    {
+    public void prepare() {
         // Sort the product list
         products.sort(Product.BY_WEIGHT);
 
@@ -49,32 +42,26 @@ public class Shipment implements Iterable<Product>
         heavyVanProducts = Collections.unmodifiableList(products.subList(splitPoint, products.size()));
     }
 
-    private int findSplitPoint()
-    {
+    private int findSplitPoint() {
         int size = products.size();
-        for (int i = 0; i < size; i++)
-        {
+        for (int i = 0; i < size; i++) {
             Product product = products.get(i);
-            if (product.weight() > LIGHT_VAN_MAX_WEIGHT)
-            {
+            if (product.weight() > LIGHT_VAN_MAX_WEIGHT) {
                 return i;
             }
         }
         return 0;
     }
 
-    public List<Product> getHeavyVanProducts()
-    {
+    public List<Product> getHeavyVanProducts() {
         return heavyVanProducts;
     }
 
-    public List<Product> getLightVanProducts()
-    {
+    public List<Product> getLightVanProducts() {
         return lightVanProducts;
     }
 
-    public Iterator<Product> iterator()
-    {
+    public Iterator<Product> iterator() {
         return products.iterator();
     }
 }

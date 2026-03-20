@@ -1,4 +1,5 @@
 package Exception.Esercizio04;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -74,7 +75,7 @@ public class Main {
             int result = execute(operation, leftVal, rightVal);
 
             System.out.println(inputLine + " = " + result);
-        }catch (InvalidStatementException ex) {
+        } catch (InvalidStatementException ex) {
             throw ex;
         } catch (Exception ex) {
             throw new InvalidStatementException("Error processing statement", ex);
@@ -94,7 +95,7 @@ public class Main {
                 result = leftVal * rightVal;
                 break;
             case DIVIDE:
-                if (rightVal == 0){
+                if (rightVal == 0) {
 //                    IllegalArgumentException ex =
 //                            new IllegalArgumentException("Zero rightVal not permitted with divide operation");
 //                    throw ex;

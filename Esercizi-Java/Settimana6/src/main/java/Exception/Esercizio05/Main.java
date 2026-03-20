@@ -1,7 +1,6 @@
 package Exception.Esercizio05;
 
 
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -44,7 +43,7 @@ public class Main {
     // Il metodo dichiara 'throws IOException, InvalidStatementException' per indicare che può generare
     // un'eccezione di tipo IOException e InvalidStatementException durante la lettura del file.
     // La gestione dell'eccezione sarà a carico di chi chiama questo metodo.
-    private static void processFile(BufferedReader reader) throws IOException{
+    private static void processFile(BufferedReader reader) throws IOException {
         // Apertura del file indicato come primo argomento da riga di comando
         String inputLine = null;
         while ((inputLine = reader.readLine()) != null)
@@ -53,7 +52,7 @@ public class Main {
 
                 // Eccezione personalizzata generata durante l'elaborazione
                 // di una riga non valida del file.
-            }catch (InvalidStatementException ex) {
+            } catch (InvalidStatementException ex) {
                 //messaggio più chiaro per l'end user ma con poche informazioni
                 //per il programmatore o team di sviluppo
                 System.out.println(ex.getMessage() + " " + inputLine);
@@ -79,7 +78,7 @@ public class Main {
             int result = execute(operation, leftVal, rightVal);
 
             System.out.println(inputLine + " = " + result);
-        }catch (InvalidStatementException ex) {
+        } catch (InvalidStatementException ex) {
             throw ex;
         } catch (Exception ex) {
             throw new InvalidStatementException("Error processing statement", ex);
@@ -99,7 +98,7 @@ public class Main {
                 result = leftVal * rightVal;
                 break;
             case DIVIDE:
-                if (rightVal == 0){
+                if (rightVal == 0) {
 //                    IllegalArgumentException ex =
 //                            new IllegalArgumentException("Zero rightVal not permitted with divide operation");
 //                    throw ex;
@@ -128,6 +127,7 @@ public class Main {
 
         return value;
     }
+
     static void writeInvalidStatementExceptionToLog(InvalidStatementException ex, String inputLine) {
         System.err.println("");
         System.err.println("*********************************");
@@ -135,7 +135,7 @@ public class Main {
         System.err.println("*********************************");
 
         System.err.println(ex.getMessage() + " - " + inputLine);
-        if(ex.getCause() != null)
+        if (ex.getCause() != null)
             System.err.println("  caused by " + ex.getCause());
         ex.printStackTrace(System.err);
     }

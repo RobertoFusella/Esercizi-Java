@@ -3,10 +3,8 @@ package collections._4_maps.before;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class MutableHashMapKeys
-{
-    public static void main(String[] args)
-    {
+public class MutableHashMapKeys {
+    public static void main(String[] args) {
         var brokenMap = new HashMap<MutableString, String>();
 
         var value = "abc";
@@ -23,28 +21,23 @@ public class MutableHashMapKeys
         System.out.println(brokenMap);
     }
 
-    private static class MutableString
-    {
+    private static class MutableString {
         private String value;
 
-        public MutableString(final String value)
-        {
+        public MutableString(final String value) {
             set(value);
         }
 
-        public String get()
-        {
+        public String get() {
             return value;
         }
 
-        public void set(final String value)
-        {
+        public void set(final String value) {
             Objects.requireNonNull(value);
             this.value = value;
         }
 
-        public boolean equals(final Object o)
-        {
+        public boolean equals(final Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
@@ -53,13 +46,11 @@ public class MutableHashMapKeys
             return value.equals(that.value);
         }
 
-        public int hashCode()
-        {
+        public int hashCode() {
             return value.hashCode();
         }
 
-        public String toString()
-        {
+        public String toString() {
             return value;
         }
     }
