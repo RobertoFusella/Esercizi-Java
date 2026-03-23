@@ -1,7 +1,7 @@
 package rxwriter.prescription.drug;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.*;
 import rxwriter.drug.DispensableDrug;
 import rxwriter.drug.DrugClassification;
 import rxwriter.drug.DrugService;
@@ -13,33 +13,51 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("DrugService should ")
 public class DrugServiceTest implements DrugSource {
 
     private DrugService drugService;
 
     @BeforeEach
-    void setup(){
+    void setup() {
         drugService = new DrugService(this);
     }
 
     @Test
+    @DisplayName("return drugs from the database sorted by drug name")
     void drugsAreReturnedSorted() {
         List<DispensableDrug> foundDrugs = drugService.findDrugsStartingWith("as");
         assertNotNull(foundDrugs);
-        assertEquals(2, foundDrugs.size());
+        assertEquals(2, foundDrugs.size(), "two drugs starting with 'as' should be returned from test data");
         assertEquals("asmanex", foundDrugs.get(0).drugName());
         assertEquals("aspirin", foundDrugs.get(1).drugName());
     }
 
-    @Test
-    void throwsExceptionOnEmptyStartsWith() {
-        Exception thrown = assertThrows(IllegalArgumentException.class, () -> {
-            drugService.findDrugsStartingWith(" ");
-        });
-        System.out.printf(thrown.getMessage());
+    @Nested
+    @DisplayName("throw an illegal argument exception")
+    class ThrowsExceptionTests {
+        @Test
+        @DisplayName("when passed a blank string for startingWith")
+        void throwsExceptionOnBlankStartsWith() {
+            Exception thrown = assertThrows(IllegalArgumentException.class, () -> {
+                drugService.findDrugsStartingWith(" ");
+            });
+            System.out.printf(thrown.getMessage());
+        }
+
+        @Test
+        @DisplayName("when passed a empty string for startingWith")
+        void throwsExceptionOnEmptyStartsWith() {
+            Exception thrown = assertThrows(IllegalArgumentException.class, () -> {
+                drugService.findDrugsStartingWith("");
+            });
+            System.out.printf(thrown.getMessage());
+        }
     }
 
     @Test
+    @Tag("database")
+    @DisplayName("return dispensable drugs with all properties set correctly from database")
     void setsDrugPropertiesCorrectly() {
         List<DispensableDrug> foundDrugs = drugService.findDrugsStartingWith("aspirin");
         DrugClassification[] expectedClassifications = new DrugClassification[]{

@@ -1,14 +1,16 @@
 package rxwriter.prescription;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DurationParserTest {
-    @Test
-    void parseDurationWithValidUnitAndQuantity() {
-        assertEquals(14,DurationParser.parseDays("2 weeks"));
-        assertEquals(30,DurationParser.parseDays("1 month"));
-
+    @ParameterizedTest
+    @CsvSource({"2 weeks, 14","1 month, 30","5 days, 5", "once, 1"})
+    void parseDurationWithValidUnitAndQuantity(String durationString, int expectedDays) {
+        assertEquals(expectedDays,DurationParser.parseDays(durationString));
     }
 }
