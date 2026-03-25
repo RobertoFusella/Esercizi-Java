@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="rxwriter.prescription.DurationUnitTest" time="0.037" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="rxwriter.prescription.DurationUnitTest" time="0.006" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="IT"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Users\Administrator\.jdks\openjdk-25.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\Administrator\AppData\Local\Temp\surefire10653486425784553393\surefirebooter-20260320094207104_3.jar C:\Users\Administrator\AppData\Local\Temp\surefire10653486425784553393 2026-03-20T09-42-06_974-jvmRun1 surefire-20260320094207104_1tmp surefire_0-20260320094207104_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Administrator\AppData\Local\Temp\surefire2697537187840080090\surefirebooter-20260325113233128_9.jar C:\Users\Administrator\AppData\Local\Temp\surefire2697537187840080090 2026-03-25T11-32-25_457-jvmRun1 surefire-20260325113233128_7tmp surefire_2-20260325113233128_8tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana8\target\test-classes;C:\Users\Administrator\Desktop\progetti\Esercizi-Java\Settimana8\target\classes;C:\Users\Administrator\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Administrator\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Administrator\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Administrator\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Administrator\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Administrator\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Administrator\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Administrator\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Administrator\AppData\Local\Temp\surefire10653486425784553393\surefirebooter-20260320094207104_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Administrator\AppData\Local\Temp\surefire2697537187840080090\surefirebooter-20260325113233128_9.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.2+10-69"/>
@@ -64,6 +64,7 @@
     <property name="maven.repo.local" value="C:\Users\Administrator\.m2\repository"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="matchUnitBySingularString" classname="rxwriter.prescription.DurationUnitTest" time="0.018"/>
-  <testcase name="matchUnitByPluralString" classname="rxwriter.prescription.DurationUnitTest" time="0.001"/>
+  <testcase name="matchUnitBySingularString" classname="rxwriter.prescription.DurationUnitTest" time="0.001"/>
+  <testcase name="returnsNullForUnmatchedUnit" classname="rxwriter.prescription.DurationUnitTest" time="0.001"/>
+  <testcase name="matchUnitByPluralString" classname="rxwriter.prescription.DurationUnitTest" time="0.0"/>
 </testsuite>

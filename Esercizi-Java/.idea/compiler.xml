@@ -2,34 +2,38 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/Settimana7 corse-info/library-app/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/Settimana7-corse-info/library-app/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/Settimana9-Spring-Java/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Settimana-1" />
+        <module name="Settimana9-Spring-XML" />
+        <module name="course-info-repository" />
+        <module name="course-info-server" />
         <module name="Settimana3" />
         <module name="Settimana2" />
-        <module name="Settimana-1" />
         <module name="Settimana5" />
         <module name="Settimana4" />
         <module name="Settimana6EsercizioSuiLog" />
-        <module name="course-info-repository" />
-        <module name="library-app" />
-        <module name="course-info-cli" />
-        <module name="course-info-server" />
         <module name="student-manager" />
+        <module name="course-info-cli" />
+        <module name="Settimana9-Spring-Java" />
         <module name="Settimana8" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Esercizi-Java" target="21" />
+      <module name="library-app" target="25" />
       <module name="ProgettoSemplice" target="17" />
       <module name="ProgettoWebService" target="25" />
       <module name="Settimana5 esercizio sui Log" target="17" />
       <module name="Settimana6 esercizio sui log" target="17" />
       <module name="Settimana6EsercizioSuiLog (1)" target="9" />
+      <module name="Settimana7-corse-info (1)" target="21" />
       <module name="WebServiceClient" target="25" />
       <module name="WebServiceModel" target="25" />
       <module name="WebServiceServer" target="25" />

@@ -15,12 +15,14 @@
         <module>Settimana4</module>
         <module>Settimana5</module>
         <module>Settimana6</module>
-        <module>Settimana7 corse-info</module>
+        <module>Settimana7-corse-info</module>
         <module>Settimana8</module>
+        <module>Settimana9-Spring-Java</module>
+        <module>Settimana9-Spring-XML</module>
     </modules>
 
     <properties>
-        <maven.compiler.release>25</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.veriosn>2.0.17</slf4j.veriosn>
         <jackson.version>2.17.2</jackson.version>
@@ -62,6 +64,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.2</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

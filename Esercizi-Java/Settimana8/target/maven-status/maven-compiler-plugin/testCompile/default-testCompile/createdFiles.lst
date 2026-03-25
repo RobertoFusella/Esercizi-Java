@@ -1,1 +1,6 @@
+rxwriter\prescription\DurationParserTest.class
+rxwriter\prescription\drug\DrugConceptTest.class
+rxwriter\prescription\drug\DrugServiceTest.class
 rxwriter\prescription\DurationUnitTest.class
+rxwriter\prescription\drug\LifecycleTest.class
+rxwriter\prescription\drug\DrugServiceTest$ThrowsExceptionTests.class

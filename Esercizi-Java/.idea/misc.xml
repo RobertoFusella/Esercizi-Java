@@ -26,6 +26,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Settimana6EsercizioSuiLog/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/settimana3/pom.xml" />
       </set>
     </option>
