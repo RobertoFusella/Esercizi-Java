@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="course-info-cli-1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Settimana7-corse-info/course-info-cli/target/course-info-cli-1.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

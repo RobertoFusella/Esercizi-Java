@@ -1,0 +1,7 @@
+org\esempio\Service\SpeakerService.class
+org\esempio\Repository\SpeakerRepository.class
+org\esempio\Repository\StubSpeakerRepositoryImpl.class
+org\esempio\AppConfig.class
+org\esempio\Service\SpeakerServiceImpl.class
+org\esempio\App.class
+org\esempio\Model\Speaker.class

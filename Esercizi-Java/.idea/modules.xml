@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoSemplice/ProgettoSemplice.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoSemplice/ProgettoSemplice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoSemplice/ProgettoSemplice2.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoSemplice/ProgettoSemplice2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Settimana1/Settimana1.iml" filepath="$PROJECT_DIR$/Settimana1/Settimana1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Settimana8.iml" filepath="$PROJECT_DIR$/Settimana8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient2.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceClient/WebServiceClient2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel2.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceModel/WebServiceModel2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceServer/WebServiceServer.iml" filepath="$PROJECT_DIR$/Settimana4/Maven Fundamentals/ProgettoWebService/WebServiceServer/WebServiceServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Esercizi Corso/student-manager.iml" filepath="$PROJECT_DIR$/Esercizi Corso/student-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana7-corse-info/course-info-repository/src/main/main2.iml" filepath="$PROJECT_DIR$/Settimana7-corse-info/course-info-repository/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana7-corse-info/library-app/src/main/main3.iml" filepath="$PROJECT_DIR$/Settimana7-corse-info/library-app/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana7-corse-info/course-info-cli/src/main/main6.iml" filepath="$PROJECT_DIR$/Settimana7-corse-info/course-info-cli/src/main/main6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana7-corse-info/course-info-repository/src/test/test2.iml" filepath="$PROJECT_DIR$/Settimana7-corse-info/course-info-repository/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana7-corse-info/library-app/src/test/test4.iml" filepath="$PROJECT_DIR$/Settimana7-corse-info/library-app/src/test/test4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Settimana7-corse-info/course-info-cli/src/test/test6.iml" filepath="$PROJECT_DIR$/Settimana7-corse-info/course-info-cli/src/test/test6.iml" />
     </modules>
   </component>
 </project>

@@ -26,7 +26,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Esercizi-Java" target="21" />
       <module name="library-app" target="25" />
       <module name="ProgettoSemplice" target="17" />
       <module name="ProgettoWebService" target="25" />
