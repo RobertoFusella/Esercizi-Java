@@ -1,0 +1,14 @@
+events\ProductRepository.class
+events\EventRepository.class
+events\OrganizerRepository.class
+events\Venue.class
+org\esempio\Settimana10SpringBoot3FundamentalsApplication.class
+events\EventController.class
+events\VenueRepository.class
+org\esempio\ControllerExceptionHandler.class
+events\Product.class
+registration\RegistrationRepository.class
+registration\RegistrationController.class
+registration\Registration.class
+events\Event.class
+events\Organizer.class
